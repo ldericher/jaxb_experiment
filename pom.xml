@@ -6,45 +6,18 @@
 
     <groupId>de.rwth_aachen.swc.miehe.experiments</groupId>
     <artifactId>jaxb-experiment</artifactId>
+    <packaging>jar</packaging>
     <version>1.0</version>
 
-    <!-- ... -->
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <!-- ... -->
-        <javax.activation.version>1.2.0</javax.activation.version>
-        <jaxb.api.version>2.3.0</jaxb.api.version>
+        <!-- fixed versions -->
+        <jaxb.api.version>2.3.1</jaxb.api.version>
         <lombok.version>1.18.6</lombok.version>
     </properties>
 
     <dependencies>
-        <!-- ... -->
-
-        <dependency>
-            <groupId>com.sun.activation</groupId>
-            <artifactId>javax.activation</artifactId>
-            <version>${javax.activation.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>javax.xml.bind</groupId>
-            <artifactId>jaxb-api</artifactId>
-            <version>${jaxb.api.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-core</artifactId>
-            <version>${jaxb.api.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.sun.xml.bind</groupId>
-            <artifactId>jaxb-impl</artifactId>
-            <version>${jaxb.api.version}</version>
-        </dependency>
-
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -52,7 +25,19 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- ... -->
+        <!-- JAXB deps -->
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>${jaxb.api.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.glassfish.jaxb</groupId>
+            <artifactId>jaxb-runtime</artifactId>
+            <version>${jaxb.api.version}</version>
+            <scope>runtime</scope>
+        </dependency>
     </dependencies>
 
     <build>
