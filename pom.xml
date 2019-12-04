@@ -63,6 +63,28 @@
                     </archive>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.14.0</version>
+                <executions>
+                    <execution>
+                        <id>parse-schema</id>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <schemaDirectory>src/main/xsd</schemaDirectory>
+                            <schemaIncludes>
+                                <include>thoughtsonjava.xsd</include>
+                            </schemaIncludes>
+                            <generateDirectory>target/generated-sources/xjc/thoughtsonjava</generateDirectory>
+                            <generatePackage>de.rwth_aachen.swc.miehe.experiments.jaxb.models.thoughtsonjava
+                            </generatePackage>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 </project>
